@@ -82,12 +82,10 @@ public class QuickActionBar extends QuickActionWidget {
     public void show(View anchor) {
         super.show(anchor);
         mScrollView.scrollTo(0, 0);
-        //mRack.startAnimation(mRackAnimation);
     }
 
     @Override
     protected void onMeasureAndLayout(Rect anchorRect, View contentView) {
-    	//mel
     	
         contentView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         contentView.measure(MeasureSpec.makeMeasureSpec(getScreenWidth(), MeasureSpec.EXACTLY),
@@ -111,7 +109,7 @@ public class QuickActionBar extends QuickActionWidget {
         mQuickActions = quickActions;
 
         final LayoutInflater inflater = LayoutInflater.from(getContext());
-        
+
         for (QuickAction action : quickActions) {
             TextView view = (TextView) inflater.inflate(R.layout.gd_quick_action_bar_item, mQuickActionItems, false);
             view.setText(action.mTitle);
